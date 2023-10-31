@@ -21,8 +21,7 @@ llm = AzureOpenAI(
     engine="",
     model_name="",
     headers={
-      "Helicone-Auth": "",
-      "Helicone-User-Id": ""
+      "User-Id": ""
     }
 )
 
