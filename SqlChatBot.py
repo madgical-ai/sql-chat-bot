@@ -6,10 +6,8 @@ from langchain.callbacks import StreamlitCallbackHandler
 from langchain.sql_database import SQLDatabase
 import streamlit as st
 import os
-from helicone.openai_proxy import openai
-os.environ["LANGCHAIN_TRACING_V2"] = "LANGCHAIN_TRACING_V2"
-os.environ["LANGCHAIN_ENDPOINT"] = "LANGCHAIN_ENDPOINT"
-os.environ["LANGCHAIN_API_KEY"] = "LANGCHAIN_API_KEY"
+import openai
+
 apikey="apikey"
 # Set up Azure OpenAI API configuration
 openai.api_type = "openai.api_type"
