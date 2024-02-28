@@ -5,25 +5,27 @@ from langchain.agents.agent_toolkits import SQLDatabaseToolkit
 from langchain.callbacks import StreamlitCallbackHandler
 from langchain.sql_database import SQLDatabase
 import streamlit as st
+from dotenv import load_dotenv
 import os
 import openai
 
-apikey="apikey"
+load_dotenv()
+
+apikey = "yes"
+
 # Set up Azure OpenAI API configuration
-openai.api_type = "openai.api_type"
-openai.api_version = "openai.api_version"
-openai.api_base= "openai.api_base"
-os.environ["OPENAI_API_KEY"] = "OPENAI_API_KEY"
+openai.api_type = "azure"
+openai.api_version = os.getenv("OPENAI_VERSION")
+openai.api_base= os.getenv("OPENAI_URL_BASE")
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_KEY")
+
 
 # Create an instance of Azure OpenAI
 llm = AzureOpenAI(
-    temperature=0,
-    engine="",
-    model_name="",
-    headers={
-      "User-Id": ""
-    }
-)
+    temperature=0, 
+    engine="gpt-3-5",
+    model_name="gpt-3.5-turbo",
+  )
 
 # Create a Streamlit app
 st.title("Talk to your data")
