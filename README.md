@@ -25,19 +25,12 @@ Before you can use this application, make sure you have the following prerequisi
 
 3. Set the following environment variables:
 
-    - `LANGCHAIN_TRACING_V2`: Set this to `"LANGCHAIN_TRACING_V2"`.
-    - `LANGCHAIN_ENDPOINT`: Set this to your LangChain endpoint.
-    - `LANGCHAIN_API_KEY`: Set this to your LangChain API key.
-    - `OPENAI_API_KEY`: Set this to your Azure OpenAI API key.
+    - OPENAI_VERSION = Azure version
+    - OPENAI_KEY = Azure Key
+    - OPENAI_URL_BASE = Azure Base URL
 
-4. Modify the Streamlit application code:
 
-    - Replace `"openai.api_type"`, `"openai.api_version"`, and `"openai.api_base"` with your Azure OpenAI API configuration values.
-    - Update `"model_name"` with your desired language model name.
-    - Modify the `headers` dictionary with your Helicone authentication and user ID values.
-    - Adjust the database connection string in `db_string` with your PostgreSQL database details.
-
-5. Run the Streamlit application:
+4. Run the Streamlit application:
 
     ```bash
     streamlit run app.py
